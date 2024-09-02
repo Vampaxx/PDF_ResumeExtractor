@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Upload</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 600px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input[type="file"] {
+            margin: 10px 0;
+        }
+        .message {
+            color: red;
+        }
+        .parsed-info {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        .parsed-info h2 {
+            margin: 0;
+        }
+        .parsed-info p, .parsed-info ul {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload Your Resume (PDF)</h1>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="message">
+          <ul>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+    {% endwith %}
+    
+    <form action="{{ url_for('upload_file') }}" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".pdf" required>
+        <input type="submit" value="Upload">
+    </form>
+
+    {% if parsed_data %}
+        <div class="parsed-info">
+            <h2>Parsed Information:</h2>
+            <div>
+                <h3>Personal Information</h3>
+                <p><strong>Name:</strong> {{ parsed_data.personal_info.get('name', 'N/A') }}</p>
+                <p><strong>Email:</strong> {{ parsed_data.personal_info.get('email', 'N/A') }}</p>
+                <p><strong>Phone Number:</strong> {{ parsed_data.personal_info.get('phone_number', 'N/A') }}</p>
+            </div>
+            <div>
+                <h3>Project Titles</h3>
+                <ul>
+                    {% for project in parsed_data.project_titles %}
+                        <li>{{ project }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div>
+                <h3>Work Experience Summary</h3>
+                <p>{{ parsed_data.experience }}</p>
+            </div>
+        </div>
+    {% endif %}
+</body>
+</html>
