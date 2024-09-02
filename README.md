@@ -39,6 +39,13 @@ Start the application by executing:
 
 python app.py
 ```
+## DEMO WORKING 
+
+
+
+https://github.com/user-attachments/assets/510b9027-65e9-4d15-bb10-340366d4e3f4
+
+
 
 ### Access the Web Interface:
 
