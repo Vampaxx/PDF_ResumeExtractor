@@ -2,7 +2,7 @@ import os
 import re
 from datetime import date
 from typing import Union,Optional,List,Dict
-from pydantic import BaseModel,ValidationError,Field,Extra,validator,field_validator,EmailStr,constr
+from pydantic import BaseModel,Field,field_validator,EmailStr
 
 from langchain_core.prompts import PromptTemplate
 from langchain_community.document_loaders import PyPDFLoader

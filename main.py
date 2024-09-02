@@ -3,7 +3,7 @@ from langchain_groq import ChatGroq
 from dotenv import load_dotenv
 
 
-from modules import load_pdf,parsing,Details,path_processing
+from modules import load_pdf,parsing
 
 
 
