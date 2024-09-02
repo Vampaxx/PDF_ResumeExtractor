@@ -1,7 +1,7 @@
 #groq                == 0.10.0 
 pydantic            == 2.6.4
 regex               == 2024.7.24
-langchain_community == 0.2.15 
+langchain_community  == 0.2.15 
 langchain-groq      == 0.1.9 
 Flask               == 3.0.3 
 pydantic[email]
