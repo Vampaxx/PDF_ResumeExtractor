@@ -90,3 +90,7 @@ Approach to the Project
 6. Testing and Validation:
     Test the application with various PDF resumes to ensure that it handles different formats and layouts effectively.
     Validate the extracted data to confirm that the application meets the expected output format.
+
+## Challenges                            
+
+During the development of the PDF Resume Parser application, I encountered some challenges, particularly with the deployment process. While I have yet to resolve the issues faced when deploying on Vercel, I view this as an opportunity for growth and learning. Each challenge has provided valuable insights into the intricacies of web application deployment, and I am optimistic about finding a solution. I'm excited to explore new strategies to overcome these hurdles, and I'm confident that this experience will strengthen my skills for future projects!
